@@ -10,7 +10,7 @@
 module load singularity/3.5.2
 
 # to get the image (need to be on a partition which has internet access --> data), run
-# $ singularity pull --disable-cache --dir "${PWD}" docker://quay.io/willirath/parcels-container:2021.09.29-09ab0ce
+singularity pull --disable-cache --dir "${PWD}" docker://quay.io/willirath/parcels-container:2021.09.29-09ab0ce
 
 # make sure the output exists
 mkdir -p executed_notebooks
