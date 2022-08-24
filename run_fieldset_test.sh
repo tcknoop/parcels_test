@@ -19,8 +19,8 @@ mkdir -p executed_notebooks
 srun --ntasks=1 --exclusive singularity run -B /sfs -B /gxfs_work1 -B $PWD:/work --pwd /work parcels-container_2021.09.29-09ab0ce.sif bash -c \
     ". /opt/conda/etc/profile.d/conda.sh && conda activate base \
     && papermill --cwd notebooks \
-        notebooks/test_thorben.ipynb \
-        executed_notebooks/test_thorben.ipynb \
+        notebooks/fieldset_test.ipynb \
+        executed_notebooks/fieldset_test_output.ipynb \
         -k python" &
 
 # wait till background task is done
