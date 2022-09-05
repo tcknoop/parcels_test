@@ -3,7 +3,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=24G
-#SBATCH --time=01:00:00
+#SBATCH --time=05:00:00
 #SBATCH --partition=data
 
 # make sure we have Singularity
@@ -20,7 +20,7 @@ srun --ntasks=1 --exclusive singularity run -B /sfs -B /gxfs_work1 -B $PWD:/work
     ". /opt/conda/etc/profile.d/conda.sh && conda activate base \
     && papermill --cwd notebooks \
         notebooks/fieldset_test.ipynb \
-        executed_notebooks/fieldset_test_output.ipynb \
+        executed_notebooks/fieldset_test_output_monthly.ipynb \
         -k python" &
 
 # wait till background task is done
